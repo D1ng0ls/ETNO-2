@@ -25,7 +25,7 @@ public class UsuarioController {
 	
 	@PostMapping(value = "/salvar", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> save(@RequestBody UsuarioRequest usuarioRequest) {
-		var usuarioResponse = usuarioService.save(usuarioRequest); // Retorna a instância da entidade usuario
+		var usuarioResponse = usuarioService.create(usuarioRequest); // Retorna a instância da entidade usuario
 		
 		return ResponseEntity.status(HttpStatus.CREATED.value()).body(usuarioResponse);
 	}
