@@ -12,41 +12,41 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.etno.models.service.UsuarioService;
-import com.etno.models.service.dto.request.UsuarioRequest;
+import com.etno.models.model.Postagem;
+import com.etno.models.service.PostagemService;
 
 @RestController
-@RequestMapping(value = "/rest/usuario")
-public class UsuarioController {
-	
+@RequestMapping(value = "/rest/postagem")
+public class PostagemController {
+
 	@Autowired
-	private UsuarioService usuarioService;
+	private PostagemService postagemService;
 	
 	@PostMapping(value = "/create", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> create(@RequestBody UsuarioRequest usuarioRequest) {
-		var response = usuarioService.create(usuarioRequest);
+	public ResponseEntity<?> create(@RequestBody Postagem postagem) {
+		var response = postagemService.create(postagem);
 		
 		return ResponseEntity.status(HttpStatus.CREATED.value()).body(response);
 	}
 	
 	@PutMapping(value = "/modify/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> update(@PathVariable Long id, @RequestBody UsuarioRequest usuarioRequest) {
-		var response = usuarioService.update(id, usuarioRequest);
+	public ResponseEntity<?> update(@PathVariable Long id, @RequestBody Postagem postagem) {
+		var response = postagemService.update(id, postagem);
 		
 		return ResponseEntity.status(HttpStatus.OK.value()).body(response);
 	}
 	
 	@GetMapping(value = "/find/{id}")
 	public ResponseEntity<?> findById(@PathVariable Long id) {
-		var response = usuarioService.findById(id);
+		var response = postagemService.findById(id);
 		
 		return ResponseEntity.status(HttpStatus.OK.value()).body(response);
 	}
 	
 	@DeleteMapping(value = "/delete/{id}")
 	public ResponseEntity<?> deleteById(@PathVariable Long id) {
-		usuarioService.deleteById(id);
+		postagemService.deleteById(id);
 		
-		return ResponseEntity.status(HttpStatus.NO_CONTENT.value()).body("Usuario excluído com sucesso!");
+		return ResponseEntity.status(HttpStatus.NO_CONTENT.value()).body("Notícia excluída com sucesso!");
 	}
 }
