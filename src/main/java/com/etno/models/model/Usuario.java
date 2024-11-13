@@ -16,7 +16,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.JoinColumn;
 
 @Entity
-@Table(name = "usuario")
+@Table(name = "ETNO_USUARIO")
 public class Usuario {
 	private Long idUsuario;
 	private String codUsuario;
@@ -43,7 +43,7 @@ public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name= "idUsuario")
+	@Column(name= "ID_USUARIO")
 	public Long getIdUsuario() {
 		return idUsuario;
 	}
@@ -52,7 +52,7 @@ public class Usuario {
 		this.idUsuario = idUsuario;
 	}
 
-	@Column(name= "codUsuario", nullable = false)
+	@Column(name= "COD_USUARIO", nullable = false)
 	public String getCodUsuario() {
 		return codUsuario;
 	}
@@ -61,7 +61,7 @@ public class Usuario {
 		this.codUsuario = codUsuario;
 	}
 
-	@Column(name= "nomeUsuario")
+	@Column(name= "NOME_USUARIO")
 	public String getNomeUsuario() {
 		return nomeUsuario;
 	}
@@ -70,7 +70,7 @@ public class Usuario {
 		this.nomeUsuario = nomeUsuario;
 	}
 	
-	@Column(name= "emailUsuario")
+	@Column(name= "EMAIL_USUARIO")
 	public String getEmailUsuario() {
 		return emailUsuario;
 	}
@@ -79,7 +79,7 @@ public class Usuario {
 		this.emailUsuario = emailUsuario;
 	}
 	
-	@Column(name= "senhaUsuario")
+	@Column(name= "SENHA_USUARIO")
 	public String getSenhaUsuario() {
 		return senhaUsuario;
 	}
@@ -88,7 +88,7 @@ public class Usuario {
 		this.senhaUsuario = senhaUsuario;
 	}
 	
-	@Column(name= "fotoUsuario")
+	@Column(name= "FOTO_USUARIO")
 	public String getFotoUsuario() {
 		return fotoUsuario;
 	}
@@ -113,9 +113,9 @@ public class Usuario {
 	
 	@ManyToMany
 	@JoinTable(
-	    name = "usuario_evento",
-	    joinColumns = @JoinColumn(name = "idUsuario"),
-	    inverseJoinColumns = @JoinColumn(name = "idEvento")
+	    name = "ETNO_USUARIO_EVENTO",
+	    joinColumns = @JoinColumn(name = "FK_USUARIO_ID_USUARIO"),
+	    inverseJoinColumns = @JoinColumn(name = "FK_EVENTO_FK_POSTAGEM_ID_POSTAGEM")
 	)
 	public Set<Evento> getEventos() {
 		return eventos;
@@ -127,9 +127,9 @@ public class Usuario {
 
 	@ManyToMany
 	@JoinTable(
-	    name = "usuario_permissao",
-	    joinColumns = @JoinColumn(name = "idUsuario"),
-	    inverseJoinColumns = @JoinColumn(name = "idPermissao")
+	    name = "ETNO_USUARIO_PERMISSAO",
+	    joinColumns = @JoinColumn(name = "FK_USUARIO_ID_USUARIO"),
+	    inverseJoinColumns = @JoinColumn(name = "FK_PERMISSAO_ID_PERMISSAO")
 	)
 	public Set<Permissao> getPermissoes() {
 		return permissoes;

@@ -12,7 +12,7 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "permissoes")
+@Table(name = "ETNO_PERMISSAO")
 public class Permissao {
 	private Long idPermissao;
 	private String codPermissao;
@@ -31,7 +31,7 @@ public class Permissao {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name= "idPermissao")
+	@Column(name= "ID_PERMISSAO")
 	public Long getIdPermissao() {
 		return idPermissao;
 	}
@@ -40,7 +40,7 @@ public class Permissao {
 		this.idPermissao = idPermissao;
 	}
 	
-	@Column(name= "codPermissao", nullable = false)
+	@Column(name= "COD_PERMISSAO", nullable = false)
 	public String getCodPermissao() {
 		return codPermissao;
 	}
@@ -49,7 +49,7 @@ public class Permissao {
 		this.codPermissao = codPermissao;
 	}
 	
-	@Column(name= "nomePermissao")
+	@Column(name= "NOME_PERMISSAO")
 	public String getNomePermissao() {
 		return nomePermissao;
 	}

@@ -12,7 +12,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "evento")
+@Table(name = "ETNO_EVENTO")
 public class Evento extends Postagem {
 	private String codEvento;
     private String logradouroEvento;
@@ -38,7 +38,7 @@ public class Evento extends Postagem {
         this.dataHorarioFimEvento = dataHorarioFimEvento;
     }
 
-    @Column(name = "codEvento", nullable = false)
+    @Column(name = "COD_EVENTO", nullable = false)
     public String getCodEvento() {
         return codEvento;
     }
@@ -47,7 +47,7 @@ public class Evento extends Postagem {
         this.codEvento = codEvento;
     }
 
-    @Column(name = "logradouroEvento")
+    @Column(name = "LOGRADOURO_EVENTO")
     public String getLogradouroEvento() {
         return logradouroEvento;
     }
@@ -56,7 +56,7 @@ public class Evento extends Postagem {
         this.logradouroEvento = logradouroEvento;
     }
 
-    @Column(name = "numeroEvento")
+    @Column(name = "NUMERO_EVENTO")
     public String getNumeroEvento() {
         return numeroEvento;
     }
@@ -65,7 +65,7 @@ public class Evento extends Postagem {
         this.numeroEvento = numeroEvento;
     }
 
-    @Column(name = "bairroEvento")
+    @Column(name = "BAIRRO_EVENTO")
     public String getBairroEvento() {
         return bairroEvento;
     }
@@ -74,7 +74,7 @@ public class Evento extends Postagem {
         this.bairroEvento = bairroEvento;
     }
 
-    @Column(name = "cepEvento")
+    @Column(name = "CEP_EVENTO")
     public Long getCepEvento() {
         return cepEvento;
     }
@@ -83,7 +83,7 @@ public class Evento extends Postagem {
         this.cepEvento = cepEvento;
     }
 
-    @Column(name = "dataHorarioInicioEvento")
+    @Column(name = "DATA_HORARIO_INICIO_EVENTO")
     public LocalDateTime getDataHorarioInicioEvento() {
         return dataHorarioInicioEvento;
     }
@@ -92,7 +92,7 @@ public class Evento extends Postagem {
         this.dataHorarioInicioEvento = dataHorarioInicioEvento;
     }
 
-    @Column(name = "dataHorarioFimEvento")
+    @Column(name = "DATA_HORARIO_FIM_EVENTO")
     public LocalDateTime getDataHorarioFimEvento() {
         return dataHorarioFimEvento;
     }
@@ -102,7 +102,7 @@ public class Evento extends Postagem {
     }
 
     @ManyToOne
-    @JoinColumn(name = "fk_Cidade_idCidade", referencedColumnName = "idCidade")
+    @JoinColumn(name = "FK_CIDADE_ID_CIDADE", referencedColumnName = "ID_CIDADE")
     public Cidade getCidade() {
         return cidade;
     }
@@ -121,7 +121,7 @@ public class Evento extends Postagem {
     }
     
     @ManyToOne
-    @JoinColumn(name = "fk_Postagem_idPostagem", referencedColumnName = "idPostagem")
+    @JoinColumn(name = "FK_POSTAGEM_ID_POSTAGEM", referencedColumnName = "ID_POSTAGEM")
     public Postagem getPostagem() {
 		return postagem;
 	}

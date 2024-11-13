@@ -16,7 +16,7 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "postagem")
+@Table(name = "ETNO_POSTAGEM")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Postagem {
 	private Long idPostagem;
@@ -46,7 +46,7 @@ public class Postagem {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name= "idPostagem")
+	@Column(name= "ID_POSTAGEM")
 	public Long getIdPostagem() {
 		return idPostagem;
 	}
@@ -55,7 +55,7 @@ public class Postagem {
 		this.idPostagem = idPostagem;
 	}
 	
-	@Column(name= "codPostagem", nullable = false)
+	@Column(name= "COD_POSTAGEM", nullable = false)
 	public String getCodPostagem() {
 		return codPostagem;
 	}
@@ -64,7 +64,7 @@ public class Postagem {
 		this.codPostagem = codPostagem;
 	}
 	
-	@Column(name= "tituloPostagem")
+	@Column(name= "TITULO_POSTAGEM")
 	public String getTituloPostagem() {
 		return tituloPostagem;
 	}
@@ -73,7 +73,7 @@ public class Postagem {
 		this.tituloPostagem = tituloPostagem;
 	}
 
-	@Column(name= "dataPostagem")
+	@Column(name= "DATA_POSTAGEM")
 	public LocalDateTime getDataPostagem() {
 		return dataPostagem;
 	}
@@ -82,7 +82,7 @@ public class Postagem {
 		this.dataPostagem = dataPostagem;
 	}
 	
-	@Column(name= "imagemPostagem")
+	@Column(name= "IMAGEM_POSTAGEM")
 	public String getImagemPostagem() {
 		return imagemPostagem;
 	}
@@ -91,7 +91,7 @@ public class Postagem {
 		this.imagemPostagem = imagemPostagem;
 	}
 	
-	@Column(name= "urlPostagem")
+	@Column(name= "URL_POSTAGEM")
 	public String getUrlPostagem() {
 		return urlPostagem;
 	}
@@ -100,7 +100,7 @@ public class Postagem {
 		this.urlPostagem = urlPostagem;
 	}
 	
-	@Column(name= "tipoPostagem")
+	@Column(name= "TIPO_POSTAGEM")
 	public Integer getTipoPostagem() {
 		return tipoPostagem;
 	}
@@ -128,7 +128,7 @@ public class Postagem {
 	}
 	
 	@ManyToOne
-	@JoinColumn(name = "fk_Usuario_idUsuario", referencedColumnName = "idUsuario")
+	@JoinColumn(name = "FK_USUARIO_ID_USUARIO", referencedColumnName = "ID_USUARIO")
 	public Usuario getUsuario() {
 		return usuario;
 	}

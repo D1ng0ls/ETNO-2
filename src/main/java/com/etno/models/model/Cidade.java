@@ -12,7 +12,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "cidade")
+@Table(name = "ETNO_CIDADE")
 public class Cidade {
 	private Long idCidade;
 	private String codCidade;
@@ -31,7 +31,7 @@ public class Cidade {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name= "idCidade")
+	@Column(name= "ID_CIDADE")
 	public Long getIdCidade() {
 		return idCidade;
 	}
@@ -40,7 +40,7 @@ public class Cidade {
 		this.idCidade = idCidade;
 	}
 
-	@Column(name= "codCidade", nullable = false)
+	@Column(name= "COD_CIDADE", nullable = false)
 	public String getCodCidade() {
 		return codCidade;
 	}
@@ -49,7 +49,7 @@ public class Cidade {
 		this.codCidade = codCidade;
 	}
 	
-	@Column(name= "nomeCidade")
+	@Column(name= "NOME_CIDADE")
 	public String getNomeCidade() {
 		return nomeCidade;
 	}

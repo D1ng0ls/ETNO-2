@@ -9,7 +9,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "noticia")
+@Table(name = "ETNO_NOTICIA")
 public class Noticia extends Postagem {
     private String codNoticia;
     private Postagem postagem;
@@ -20,7 +20,7 @@ public class Noticia extends Postagem {
         this.codNoticia = codNoticia;
     }
 
-    @Column(name = "codNoticia", nullable = false)
+    @Column(name = "COD_NOTICIA", nullable = false)
     public String getCodNoticia() {
         return codNoticia;
     }
@@ -30,7 +30,7 @@ public class Noticia extends Postagem {
     }
     
     @ManyToOne
-    @JoinColumn(name = "fk_Postagem_idPostagem", referencedColumnName = "idPostagem")
+    @JoinColumn(name = "FK_POSTAGEM_ID_POSTAGEM", referencedColumnName = "ID_POSTAGEM")
     public Postagem getPostagem() {
 		return postagem;
 	}
