@@ -1,5 +1,6 @@
 package com.etno.models.model;
 
+import java.util.List;
 import java.util.Objects;
 
 import jakarta.persistence.Column;
@@ -7,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,6 +17,7 @@ public class Cidade {
 	private Long idCidade;
 	private String codCidade;
 	private String nomeCidade;
+	private List<Evento> eventos;
 	
 	public Cidade() {
 
@@ -53,6 +56,15 @@ public class Cidade {
 
 	public void setNomeCidade(String nomeCidade) {
 		this.nomeCidade = nomeCidade;
+	}
+	
+	@OneToMany(mappedBy = "cidade")
+	public List<Evento> getEvento() {
+		return eventos;
+	}
+
+	public void setEvento(List<Evento> eventos) {
+		this.eventos = eventos;
 	}
 
 	@Override

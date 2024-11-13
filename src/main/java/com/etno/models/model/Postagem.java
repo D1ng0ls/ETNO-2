@@ -1,12 +1,16 @@
 package com.etno.models.model;
 
 import java.util.Objects;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,16 +19,19 @@ public class Postagem {
 	private Long idPostagem;
 	private String codPostagem;
 	private String tituloPostagem;
-	private String dataPostagem;
+	private LocalDateTime dataPostagem;
 	private String imagemPostagem;
 	private String urlPostagem;
 	private Integer tipoPostagem;
+	private Evento evento;
+	private Noticia noticia;
+	private Usuario usuario;
 	
 	public Postagem() {
 		
 	}
 
-	public Postagem(Long idPostagem, String codPostagem, String tituloPostagem, String dataPostagem, String imagemPostagem, String urlPostagem, Integer tipoPostagem) {
+	public Postagem(Long idPostagem, String codPostagem, String tituloPostagem, LocalDateTime dataPostagem, String imagemPostagem, String urlPostagem, Integer tipoPostagem) {
 		this.idPostagem = idPostagem;
 		this.codPostagem = codPostagem;
 		this.tituloPostagem = tituloPostagem;
@@ -64,11 +71,11 @@ public class Postagem {
 	}
 
 	@Column(name= "dataPostagem")
-	public String getDataPostagem() {
+	public LocalDateTime getDataPostagem() {
 		return dataPostagem;
 	}
 
-	public void setDataPostagem(String dataPostagem) {
+	public void setDataPostagem(LocalDateTime dataPostagem) {
 		this.dataPostagem = dataPostagem;
 	}
 	
@@ -98,6 +105,35 @@ public class Postagem {
 	public void setTipoPostagem(Integer tipoPostagem) {
 		this.tipoPostagem = tipoPostagem;
 	}
+	
+	@OneToOne(mappedBy = "postagem")
+	public Evento getEvento() {
+		return evento;
+	}
+
+	public void setEvento(Evento evento) {
+		this.evento = evento;
+	}
+	
+	@OneToOne(mappedBy = "postagem")
+	public Noticia getNoticia() {
+		return noticia;
+	}
+
+	public void setNoticia(Noticia noticia) {
+		this.noticia = noticia;
+	}
+	
+	@ManyToOne
+	@JoinColumn(name = "fk_Usuario_idUsuario", referencedColumnName = "idUsuario")
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
 
 	@Override
 	public int hashCode() {

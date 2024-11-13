@@ -1,12 +1,14 @@
 package com.etno.models.model;
 
 import java.util.Objects;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,6 +17,7 @@ public class Permissao {
 	private Long idPermissao;
 	private String codPermissao;
 	private String nomePermissao;
+	private Set<Usuario> usuarios;
 	
 	public Permissao() {
 		
@@ -53,6 +56,15 @@ public class Permissao {
 
 	public void setNomePermissao(String nomePermissao) {
 		this.nomePermissao = nomePermissao;
+	}
+	
+	@ManyToMany(mappedBy = "permissoes")
+	public Set<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(Set<Usuario> usuarios) {
+		this.usuarios = usuarios;
 	}
 
 	@Override

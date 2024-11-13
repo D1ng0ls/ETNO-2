@@ -1,13 +1,19 @@
 package com.etno.models.model;
 
+import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.JoinColumn;
 
 @Entity
 @Table(name = "usuario")
@@ -18,7 +24,9 @@ public class Usuario {
 	private String emailUsuario;
 	private String senhaUsuario;
 	private String fotoUsuario;
-	
+	private List<Postagem> postagens;
+	private Set<Permissao> permissoes;
+	private Set<Evento> eventos;
 	
 	public Usuario() {
 		
@@ -88,10 +96,47 @@ public class Usuario {
 	public void setFotoUsuario(String fotoUsuario) {
 		this.fotoUsuario = fotoUsuario;
 	}
+	
+	@OneToMany(mappedBy = "usuario")
+	public List<Postagem> getPostagens() {
+		return postagens;
+	}
+
+	public void setPostagens(List<Postagem> postagens) {
+		this.postagens = postagens;
+	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(idUsuario);
+		return Objects.hash(idUsuario);							
+	}
+	
+	@ManyToMany
+	@JoinTable(
+	    name = "usuario_evento",
+	    joinColumns = @JoinColumn(name = "idUsuario"),
+	    inverseJoinColumns = @JoinColumn(name = "idEvento")
+	)
+	public Set<Evento> getEventos() {
+		return eventos;
+	}
+
+	public void setEventos(Set<Evento> eventos) {
+		this.eventos = eventos;
+	}
+
+	@ManyToMany
+	@JoinTable(
+	    name = "usuario_permissao",
+	    joinColumns = @JoinColumn(name = "idUsuario"),
+	    inverseJoinColumns = @JoinColumn(name = "idPermissao")
+	)
+	public Set<Permissao> getPermissoes() {
+		return permissoes;
+	}
+
+	public void setPermissoes(Set<Permissao> permissoes) {
+		this.permissoes = permissoes;
 	}
 
 	@Override
