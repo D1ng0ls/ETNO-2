@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.etno.models.model.Permissao;
 import com.etno.models.service.PermissaoService;
+import com.etno.models.service.dto.request.PermissaoRequest;
 
 @RestController
 @RequestMapping(value = "/rest/permissao")
@@ -23,15 +23,15 @@ public class PermissaoController {
 	private PermissaoService permissaoService;
 	
 	@PostMapping(value = "/create", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> create(@RequestBody Permissao permissao) {
-		var response = permissaoService.create(permissao);
+	public ResponseEntity<?> create(@RequestBody PermissaoRequest permissaoRequest) {
+		var response = permissaoService.create(permissaoRequest);
 		
 		return ResponseEntity.status(HttpStatus.CREATED.value()).body(response);
 	}
 	
 	@PutMapping(value = "/modify/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> update(@PathVariable Long id, @RequestBody Permissao permissao) {
-		var response = permissaoService.update(id, permissao);
+	public ResponseEntity<?> update(@PathVariable Long id, @RequestBody PermissaoRequest permissaoRequest) {
+		var response = permissaoService.update(id, permissaoRequest);
 		
 		return ResponseEntity.status(HttpStatus.OK.value()).body(response);
 	}

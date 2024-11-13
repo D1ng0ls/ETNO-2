@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.etno.models.model.Cidade;
+import com.etno.models.service.dto.request.CidadeRequest;
 import com.etno.models.service.CidadeService;
 
 @RestController
@@ -23,15 +23,15 @@ public class CidadeController {
 	private CidadeService cidadeService;
 	
 	@PostMapping(value = "/create", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> create(@RequestBody Cidade cidade) {
-		var response = cidadeService.create(cidade);
+	public ResponseEntity<?> create(@RequestBody CidadeRequest cidadeRequest) {
+		var response = cidadeService.create(cidadeRequest);
 		
 		return ResponseEntity.status(HttpStatus.CREATED.value()).body(response);
 	}
 	
 	@PutMapping(value = "/modify/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> update(@PathVariable Long id, @RequestBody Cidade cidade) {
-		var response = cidadeService.update(id, cidade);
+	public ResponseEntity<?> update(@PathVariable Long id, @RequestBody CidadeRequest cidadeRequest) {
+		var response = cidadeService.update(id, cidadeRequest);
 		
 		return ResponseEntity.status(HttpStatus.OK.value()).body(response);
 	}

@@ -5,5 +5,4 @@ import com.etno.models.service.dto.response.UsuarioResponse;
 
 public interface UsuarioService extends GenericService<UsuarioRequest, UsuarioResponse, Long>{
 	
-	
 }

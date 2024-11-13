@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.etno.models.model.Evento;
+import com.etno.models.service.dto.request.EventoRequest;
 import com.etno.models.service.EventoService;
 
 @RestController
@@ -23,15 +23,15 @@ public class EventoController {
 	private EventoService eventoService;
 	
 	@PostMapping(value = "/create", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> create(@RequestBody Evento evento) {
-		var response = eventoService.create(evento);
+	public ResponseEntity<?> create(@RequestBody EventoRequest eventoRequest) {
+		var response = eventoService.create(eventoRequest);
 		
 		return ResponseEntity.status(HttpStatus.CREATED.value()).body(response);
 	}
 	
 	@PutMapping(value = "/modify/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> update(@PathVariable Long id, @RequestBody Evento evento) {
-		var response = eventoService.update(id, evento);
+	public ResponseEntity<?> update(@PathVariable Long id, @RequestBody EventoRequest eventoRequest) {
+		var response = eventoService.update(id, eventoRequest);
 		
 		return ResponseEntity.status(HttpStatus.OK.value()).body(response);
 	}

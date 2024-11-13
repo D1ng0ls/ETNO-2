@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.etno.models.model.Postagem;
 import com.etno.models.service.PostagemService;
+import com.etno.models.service.dto.request.PostagemRequest;
 
 @RestController
 @RequestMapping(value = "/rest/postagem")
@@ -23,15 +23,15 @@ public class PostagemController {
 	private PostagemService postagemService;
 	
 	@PostMapping(value = "/create", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> create(@RequestBody Postagem postagem) {
-		var response = postagemService.create(postagem);
+	public ResponseEntity<?> create(@RequestBody PostagemRequest postagemRequest) {
+		var response = postagemService.create(postagemRequest);
 		
 		return ResponseEntity.status(HttpStatus.CREATED.value()).body(response);
 	}
 	
 	@PutMapping(value = "/modify/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> update(@PathVariable Long id, @RequestBody Postagem postagem) {
-		var response = postagemService.update(id, postagem);
+	public ResponseEntity<?> update(@PathVariable Long id, @RequestBody PostagemRequest postagemRequest) {
+		var response = postagemService.update(id, postagemRequest);
 		
 		return ResponseEntity.status(HttpStatus.OK.value()).body(response);
 	}
