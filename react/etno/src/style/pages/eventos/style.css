@@ -1,0 +1,143 @@
+@import url(../../global/default.css);
+
+/*header*/
+
+header {
+    background-color: var(--color-yellow);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.hoje {
+    background-color: var(--color-yellow);
+    padding: 15px 25px;
+    border-radius: 5px;
+}
+
+.arrows {
+    display: flex;
+    gap: 14px;
+}
+
+.arrows svg {
+    background-color: var(--color-yellow);
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logo-img-brown {
+    display: block;
+}
+
+.logo-img-white {
+    display: none;
+}
+
+.calendar-section {
+    background-color: #FFF;
+    color: var(--color-brown);
+    text-align: center;
+}
+
+.calendar table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.calendar th,
+.calendar td {
+    border: 1px solid #ddd;
+    padding: 50px;
+    text-align: center;
+}
+
+.calendar .event {
+    background-color: var(--color-yellow);
+    padding: 5px 10px;
+    border-radius: 50%;
+}
+
+.events-section {
+    padding: 20px;
+    text-align: center;
+    color: var(--color-brown);
+}
+
+.events-section h2 {
+    margin-top: 100px;
+}
+
+.event-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 50px;
+}
+
+.event-card img {
+    width: 100%;
+    height: 100%;
+}
+
+.event-card-padding {
+    padding-bottom: 10px;
+}
+
+.event-card-padding img{
+    padding: 5px 0;
+    border-radius: 15px;
+}
+
+.line-separator  { 
+    border-top: 3px solid var(--color-yellow);
+    height: 2px;
+    width: 100%; 
+    margin-top: 15px;
+} 
+
+@media (max-width: 950px) {
+    .calendar th,
+    .calendar td {
+        padding: 30px;
+    }
+
+    .event-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .arrows {
+        gap: 0px;
+    }
+
+    .arrows svg {
+        width: 10px;
+        padding: 5px 8px;
+    }
+
+    .calendar {
+        width: auto;
+    }
+
+    .calendar th,
+    .calendar td {
+        padding: 18px 7px;
+    }
+
+    .event-cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

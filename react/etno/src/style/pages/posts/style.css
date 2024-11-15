@@ -1,0 +1,282 @@
+@import url(../../global/default.css);
+
+/* header */
+
+header {
+    color: var(--color-brown);
+    background-color: var(--color-lightorange);
+}
+
+.logo-img-brown {
+    display: block;
+}
+
+.logo-img-white {
+    display: none;
+}
+
+
+/* main */
+
+section.social-media-content {
+    width: 100%;
+    height: 335px;
+    padding-top: 150px;
+}
+
+section.social-media-content p {
+    text-align: center;
+    color: var(--color-brown);
+    padding: 90px 0px 30px;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 35px;
+}
+
+div.social-media-buttons {
+    height: 94.8px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+
+.btn-social-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 7px;
+    width: 150px;
+    border-radius: 12px;
+    font-weight: 450;
+}
+
+.btn-social-media svg {
+    width: 22px;
+}
+
+.facebook-button {
+    background-color: var(--color-lightorange);
+    color: var(--color-brown);
+    cursor: pointer;
+}
+
+.instagram-button {
+    background-color: var(--color-brown);
+    color: var(--color-white);
+    font-weight: 400;
+    cursor: pointer;
+}
+
+section.last-posts-content {
+    background-color: var(--color-lightgreen);
+    color: var(--color-brown);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    max-width: 85%;
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+section.last-posts-content span {
+    font-size: 20px;
+}
+
+section.last-posts-content svg {
+    width: 18px;
+}
+
+
+section.last-posts-content img {
+    width: 28px;
+}
+
+section.social-media-posts {
+    padding-top: 80px;
+    width: 100%;
+}
+
+section.social-media-posts p.social-media-tittle-post {
+    font-size: 25px;
+    text-align: center;
+    color: var(--color-brown);
+    font-weight: bold;
+}
+
+hr {
+    width: 90%;
+    height: 3px;
+    background-color: var(--color-lightorange);
+    outline: none;
+    border: none;
+    margin-bottom: 3%;
+}
+
+.social-media-cards {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.carde {
+    display: flex;
+}
+
+.cards {
+    display: inline;
+    width: 350px;
+    height: 470px;
+    border-radius: 24px;
+    border: black 1px solid;
+    padding: 10px;
+    color: var(--color-brown);
+}
+
+.cardAberto {
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    backdrop-filter: brightness(0.01) ;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    transition: all 0.6s;
+}
+
+.fecha-card {
+    display: none;
+}
+
+.aparece {
+    display: block;
+    color: var(--color-white);
+    cursor: pointer;
+    margin:auto;
+    margin-top: 50px;
+}
+
+.aparece svg {
+    width: 32px;
+    height: 32px;
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+.cardAberto .cards {
+    margin: auto;
+    margin-bottom: 0;
+    background-color: var(--color-white);
+
+}
+
+.card-img img {
+    width: 350px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.card-desc {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-divulgacao-card {
+    background-color: var(--color-lightorange);
+    padding: 8px;
+    border-radius: 5px;
+    color: var(--color-brown);
+    font-weight: 600;
+}
+
+.dias-card {
+    padding: 8px;
+}
+
+.card-desc-img {
+    padding: 20px;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 1.1px;
+}
+
+div.filtro-qtde-pags {
+    width: 100%;
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list {
+    margin: 0px 0 0;
+}
+
+.list a {
+    color: var(--color-brown);
+    padding: 10px 19px;
+    text-decoration: none;
+    margin: 0;
+    border-radius: 50%;
+}
+
+.list img {
+    vertical-align: middle;
+}
+
+.list a.active {
+    background-color: var(--color-lightorange);
+    color: var(--color-white);
+}
+
+.buttonCards {
+    cursor: pointer;
+}
+
+.cardOpen {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.256);
+    position: fixed;
+    top: 300px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.cardOpenContent {
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: white;
+    position: relative; 
+}
+
+.popup-close {
+    color: red;
+    cursor: pointer;
+    position: absolute;
+    top: -100px;
+}
+
+@media (max-width: 400px) {
+    .list a {
+        padding: 5px 14px;
+        border-radius: 50%;
+    }
+}

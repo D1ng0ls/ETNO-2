@@ -1,0 +1,85 @@
+/* header */
+header .menu {
+    display: none;
+}
+
+@media only screen and (max-width: 1025px) {
+   
+}
+
+@media only screen and (max-width: 768px) {
+    header nav {
+        display: none;
+    }
+
+    header .menu {
+        display: block;
+        margin: auto 20px;
+        cursor: pointer;
+    }
+
+    .abre-menu {
+        height: 100vh;
+        width: 100%;
+        
+        backdrop-filter: blur(15px);
+        top: 0;
+        margin: 0;
+        transition: backdrop-filter 0.5s;
+    }
+
+    .abre-menu .header-logo {
+        display: none;
+    }
+
+    .abre-menu nav {
+        display: block;
+        height: 50vh;
+        margin: auto;
+        margin-left: 40px;
+    }
+
+    .abre-menu nav ul {
+        height: 100%;
+        flex-direction: column;
+        margin: auto;
+        justify-content: space-between;
+    }
+
+    .abre-menu nav ul>li {
+        font-size: 2rem;
+    }
+
+    .abre-menu .menu svg {
+        animation: aparece 0.6s;
+        width: 64px;
+        height: 64px;
+    }
+
+    @keyframes aparece {
+        0% {
+            transform: rotateZ(0deg);
+        }
+        100% {
+            transform: rotateZ(-90deg);
+        }
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .foot-img {
+        padding-top: 30px;
+    }
+
+    .foot-text {
+        flex-direction: column;
+        gap: 30px;
+        padding-bottom: 30px;
+        margin-top: 30px;
+    }
+
+    .icon svg, .icon {
+        width: 20px;
+        height: 20px;
+    }
+}

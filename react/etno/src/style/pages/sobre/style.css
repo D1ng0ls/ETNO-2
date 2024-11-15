@@ -1,0 +1,218 @@
+@import url(../../global/default.css);
+
+/*header*/
+
+header {
+    color: var(--color-white);
+    background-color: var(--color-red);
+}
+
+/*default*/
+
+main {
+    padding-top: 200px;
+}
+
+section {
+    width: 80%;
+    margin: auto;
+}
+
+h1, h2 {
+    font-weight: 700;
+    letter-spacing: 4px;
+    padding-bottom: 50px;
+}
+
+h1, h2, h3, p {
+    color: var(--color-brown);
+    line-height: 1.8rem;
+}
+
+h1::before, h2::before {
+    content: "";
+    width: 170px;
+    height: 4px;
+    background-color: var(--color-red);
+    position: absolute;
+    transform: translateY(32px);
+    margin-left: 0;
+}
+
+h1::before {
+    transform: translateY(40px);
+}
+
+/*sobre*/
+
+.container-about {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text-about {
+    width: 50%;
+}
+
+.text-about p {
+    width: 90%;
+}
+
+.img-about {
+    width: 40%;
+}
+    
+.img-about img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/*missao*/
+
+.missao-about {
+    margin: 110px auto;
+    background-color: var(--color-yellow);
+    border-radius: 8px;
+    color: var(--color-brown);
+}
+
+.missao-about b {
+    padding: 30px 20px 10px;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.5px;
+    display: block;
+    text-align: center;
+}
+
+.missao-about i {
+    display: block;
+    text-align: right;
+    margin: 15px 20px 0;
+    font-size: 1.25rem;
+    padding: 10px 20px 30px;
+}
+
+
+
+/*compromissos*/
+
+.container-compromissos {
+    margin-bottom: 50px;
+}
+
+.container-compromissos h2::before {
+    width: 234px;
+}
+
+.itens-compromissos ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 45px;
+    align-items: center;
+}
+
+.itens-compromissos ul li {
+    background: url(../../../media/pages/sobre/topic-logo.png) no-repeat center left;
+    padding-left: 72px;
+    margin: 50px 0;
+}
+
+.itens-compromissos ul li::marker{
+    margin-top: auto;
+}
+
+.itens-compromissos ul li h3 {
+    font-weight: 600;
+}
+
+/*lab etno*/
+
+.container-lab {
+    width: 100%;
+}
+
+.container-lab h2 {
+    margin-left: 10%;
+}
+
+.container-lab h2::before {
+    width: 142px;
+}
+
+.conteudo-lab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 150px 0 200px;
+}
+
+.img-lab {
+    position: absolute;
+    z-index: -1;
+}
+
+.img-lab img{
+    width: 60%;
+    margin-left: 50%;
+    border-radius: 4px;
+}
+
+.text-lab {
+    background-color: var(--color-red);
+    padding: 40px 10%;
+    padding-left: 35%;
+    z-index: -2;
+}
+
+.text-lab p {
+    color: var(--color-white);
+}
+
+/*representantes*/
+
+.container-representantes h2::before {
+    width: 249px;
+}
+
+.container-representantes {
+    margin-bottom: 200px;
+}
+
+.container-representantes h3{
+    text-align: center;
+    margin: 50px 0 100px 0;
+    font-size: 1.5rem;
+
+}
+
+.fotos-representantes {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 80px;
+}
+
+.repre-dev {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 160px;
+    
+}
+
+.repre-dev img {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    /* border: 3px solid var(--color-red); */
+}
+
+.repre-dev p {
+    text-align: center;
+}

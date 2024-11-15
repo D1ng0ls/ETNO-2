@@ -1,0 +1,189 @@
+@import url(../../global/default.css);
+
+/*header*/
+
+header {
+    color: var(--color-brown);
+    background-color: var(--color-lightgreen);
+}
+
+.logo-img-white {
+    display: none;
+}
+
+.logo-img-brown {
+    display: block;
+}
+
+/* outros */
+main {
+    text-align: center;
+    padding-top: 100px;
+    color: var(--color-brown);
+}
+
+h1 {
+    color: var(--color-brown);
+    margin-bottom: 15px;
+    padding: 70px;
+    margin-top: 70px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 80px;
+    width: 70%;
+}
+
+.search-bar {
+    display: flex;
+    color: var(--color-brown);
+    border: 1px solid var(--color-brown);
+    border-radius: 30px;
+}
+
+.search-bar input[type="text"] {
+    width: 250px;
+    padding: 10px;
+    border: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    color: var(--color-brown);
+}
+
+.search-bar input[type="text"]::placeholder {
+    color: var(--color-brown);
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    color: var(--color-brown);
+    cursor: pointer;
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+}
+
+.filter label {
+    margin-right: 10px;
+}
+
+.filter select {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+.filter button {
+    padding: 10px 20px; 
+    margin: 0;
+    color: var(--color-brown);
+    border: 1px solid currentColor;
+    background-color: transparent; 
+    cursor: pointer; 
+    border-radius: 8px;
+    margin-left: 20px;
+    transition: all 0.2s;
+}
+
+.filter button:hover {
+    border: 1px solid transparent;
+    background-color: var(--color-lightgreen);
+}
+
+.news-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+    gap: 50px;
+}
+
+.news-container a {
+    width: 100%;
+}
+
+.news-item {
+    border: 1px solid var(--color-brown);
+    border-radius: 10px;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.news-item img {
+    width: 220px; 
+    height: auto;
+    object-fit: cover; 
+    float: left; 
+    margin-left: 350px; 
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+}
+
+.news-content {
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.news-content p {
+    margin: 0 0 10px;
+    text-align:left;
+    font-weight: bold;
+    font-size: 115%;
+}
+
+.news-content a {
+    color: #FFFAFA;
+    padding: 8px 5px;
+    text-decoration: none;
+}
+
+.news-content button {
+    margin: 0 0 5px;
+    background-color:var(--color-lightgreen);
+    color: var(--color-brown);
+    border: none;
+    padding: 7px 15px; 
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer; 
+    text-transform: uppercase; 
+}
+
+.pagination {
+    margin: 70px 0 0;
+}
+
+.pagination a {
+    color: var(--color-brown);
+    padding: 10px 19px;
+    text-decoration: none;
+    margin: 0;
+    border-radius: 20px;
+}
+
+.pagination img {
+    vertical-align: middle;
+}
+
+.pagination a.active {
+    background-color: var(--color-lightgreen);
+    color: var(--color-white);
+}

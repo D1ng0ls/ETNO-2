@@ -1,0 +1,148 @@
+@media only screen and (max-width: 1024px) {
+    /* noticias */
+    .noticias-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .noticia-recente, .noticias-diversas {
+        width: 100%;
+    }
+
+    /* eventos */
+    .eventos-container {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+    .evento-recente, .eventos-diversos {
+        width: 100%;
+        gap: 20px;
+    }
+
+    /* posts */
+    .posts-conteudo {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .post {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .img-post {
+        width: 45%;
+    }
+
+    .img-post img {
+        height: auto;
+        width: 100%;
+        border-radius: 0;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    .text-post {
+        padding: 0 20px;
+    }
+
+    .info-text-post {
+        margin: 20px 0;
+    }
+
+    /* sobre */
+    .texto-sobre {
+        width: 80%;
+    }
+
+    /* faq */
+    .texto-faq {
+        width: 45%;
+    }
+
+    .perguntas-faq {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    /* home */
+    .home h1 {
+        line-height: 3rem;
+        font-size: 2rem;
+    }
+    
+    /* noticias */
+    .noticia-recente {
+        height: 300px;
+    }
+
+    .noticias-container {
+        gap: 20px;
+    }
+
+    .noticias-diversas {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .noticia .noticia-texto {
+        height: 100px;
+    }
+
+    /* eventos */
+    .data-evento     {
+        font-size: 1.25rem;
+        padding: 20px 10px;
+        min-width: 50px;
+    }
+
+    .texto-evento {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    /* posts */
+    .post {
+        flex-direction: column;
+        margin: auto;
+        width: 80%;
+    }
+
+    .img-post {
+        width: 100%;
+        margin: auto;
+    }
+
+    .img-post img {
+        border-radius: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .text-post {
+        padding-bottom: 30px;
+        padding-top: 10px;
+    }
+
+    /* sobre */
+    .texto-sobre {
+        width: 100%;
+    }
+
+    /* faq */
+    .FAQ-conteudo {
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+
+    .texto-faq {
+        width: 70%;
+    }
+
+    .perguntas-faq {
+        width: 100%;
+    }
+}
