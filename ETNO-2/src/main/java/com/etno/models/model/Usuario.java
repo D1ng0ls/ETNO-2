@@ -12,6 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.JoinColumn;
 
@@ -42,7 +43,8 @@ public class Usuario {
 	}
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "usuario_seq")
+    @SequenceGenerator(name = "usuario_seq", sequenceName = "ETNO_USUARIO_SEQ", allocationSize = 1)
 	@Column(name= "ID_USUARIO")
 	public Long getIdUsuario() {
 		return idUsuario;
@@ -52,7 +54,7 @@ public class Usuario {
 		this.idUsuario = idUsuario;
 	}
 
-	@Column(name= "COD_USUARIO", nullable = false)
+	@Column(name= "COD_USUARIO", unique = true, nullable = false)
 	public String getCodUsuario() {
 		return codUsuario;
 	}
@@ -61,7 +63,7 @@ public class Usuario {
 		this.codUsuario = codUsuario;
 	}
 
-	@Column(name= "NOME_USUARIO")
+	@Column(name= "NOME_USUARIO", nullable = false)
 	public String getNomeUsuario() {
 		return nomeUsuario;
 	}
@@ -70,7 +72,7 @@ public class Usuario {
 		this.nomeUsuario = nomeUsuario;
 	}
 	
-	@Column(name= "EMAIL_USUARIO")
+	@Column(name= "EMAIL_USUARIO", nullable = false)
 	public String getEmailUsuario() {
 		return emailUsuario;
 	}
@@ -79,7 +81,7 @@ public class Usuario {
 		this.emailUsuario = emailUsuario;
 	}
 	
-	@Column(name= "SENHA_USUARIO")
+	@Column(name= "SENHA_USUARIO", nullable = false)
 	public String getSenhaUsuario() {
 		return senhaUsuario;
 	}
