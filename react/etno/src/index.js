@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import App from './App';
+import { BrowserRouter } from 'react-router-dom' // Armazena o histórico de navegação do usuário dentro do site
 import './style/pages/index/style.css';
-import Header from './library/Header';
-import IndexTemplate from './paginas/index/IndexTemplate'
-import Footer from './library/Footer';
 import reportWebVitals from './reportWebVitals';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Header />
-    <IndexTemplate />
-    <Footer/>
+    <BrowserRouter> 
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
