@@ -1,8 +1,29 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import {useLocation } from 'react-router-dom';
+
 import logo from './../media/global/logo-branco.png';
+import logo2 from './../media/global/logo-brown.svg';
+
+function TrocaLogo() {
+    const [logoHeader, setLogoHeader] = useState(logo);
+    const location = useLocation();
+  
+    useEffect(() => {
+        if (location.pathname === '/noticias' || location.pathname === '/eventos' || location.pathname === '/posts') {
+            setLogoHeader(logo2);
+        } else {
+            setLogoHeader(logo);
+        }
+    }, [location.pathname]);
+  
+    return logoHeader;
+}
 
 export default function Header() {
+    let logoAtual = TrocaLogo()
+
   return (
+    
     <header className="header">
         <div className="header-logo">
             <a
@@ -11,7 +32,7 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <img src={logo} className="ETNO-logo" alt="logo" />
+                <img src={logoAtual} className="ETNO-logo" alt="logo" />
             </a>
         </div>
         <nav className="header-menu">
@@ -19,7 +40,7 @@ export default function Header() {
                 <li>
                     <a
                         className="Header-link"
-                        href="index.html"
+                        href="/"
                     >
                         Home
                     </a>
@@ -27,7 +48,7 @@ export default function Header() {
                 <li>
                     <a
                         className="Header-link"
-                        href="noticias.html"
+                        href="noticias"
                     >
                         Notícias
                     </a>
@@ -35,7 +56,7 @@ export default function Header() {
                 <li>
                     <a
                         className="Header-link"
-                        href="eventos.html"
+                        href="eventos"
                     >
                         Eventos
                     </a>
@@ -43,7 +64,7 @@ export default function Header() {
                 <li>
                     <a
                         className="Header-link"
-                        href="posts.html"
+                        href="posts"
                     >
                         Posts
                     </a>
@@ -51,7 +72,7 @@ export default function Header() {
                 <li>
                     <a
                         className="Header-link"
-                        href="sobre.html"
+                        href="sobre"
                     >
                         Sobre
                     </a>
@@ -59,7 +80,7 @@ export default function Header() {
                 <li>
                     <a
                         className="Header-link"
-                        href="faq.html"
+                        href="faq"
                     >
                         FAQ
                     </a>

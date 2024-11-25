@@ -167,6 +167,10 @@ h1 {
     text-transform: uppercase; 
 }
 
+.news-erro {
+    display: none;
+}
+
 .pagination {
     margin: 70px 0 0;
 }
