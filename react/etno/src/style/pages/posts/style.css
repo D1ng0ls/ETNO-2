@@ -215,31 +215,26 @@ hr {
     letter-spacing: 1.1px;
 }
 
-div.filtro-qtde-pags {
-    width: 100%;
-    margin-top: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.pagination {
+    margin: 70px 0 0;
+    text-align: center;
 }
 
-.list {
-    margin: 0px 0 0;
-}
-
-.list a {
+.pagination a {
     color: var(--color-brown);
     padding: 10px 19px;
     text-decoration: none;
     margin: 0;
-    border-radius: 50%;
+    border-radius: 20px;
 }
 
-.list img {
+.pagination i {
+    font-size: 32px;
     vertical-align: middle;
+    color: var(--color-lightorange);
 }
 
-.list a.active {
+.pagination a.active {
     background-color: var(--color-lightorange);
     color: var(--color-white);
 }

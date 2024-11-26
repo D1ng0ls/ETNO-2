@@ -5,6 +5,7 @@ import PrivateRoute from './PrivateRoute';
 import Index from './../paginas/index/IndexTemplate';
 import Noticia from './../paginas/noticia/NoticiaTemplate';
 import Evento from './../paginas/evento/EventoTemplate';
+import Post from './../paginas/post/PostTemplate';
 
 const Rotas = () => {
   const location = useLocation();
@@ -32,6 +33,7 @@ const Rotas = () => {
           <Route path="/" element={<Index />} />
           <Route path="/noticias" element={<Noticia />} />
           <Route path="/eventos" element={<Evento />} />
+          <Route path="/posts" element={<Post />} />
         </Route>
       </Routes>
     </>

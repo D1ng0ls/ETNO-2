@@ -183,8 +183,10 @@ h1 {
     border-radius: 20px;
 }
 
-.pagination img {
+.pagination i {
+    font-size: 32px;
     vertical-align: middle;
+    color: var(--color-lightgreen);
 }
 
 .pagination a.active {
