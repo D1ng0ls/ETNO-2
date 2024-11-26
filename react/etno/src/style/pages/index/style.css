@@ -106,11 +106,10 @@ section {
     letter-spacing: 7px;
 }
 
-.home svg {
+.home i {
     color: var(--color-white);
     position: absolute;
-    width: 32px;
-    height: 32px;
+    font-size: 2rem;
     margin: 70px auto;
     bottom: 0;
     animation: indica 2s infinite;
@@ -483,12 +482,6 @@ section {
     border-color: var(--color-red);
 }
 
-.bt-sobre svg {
-    vertical-align:text-bottom;
-    width: 24px;
-    height: 24px;
-}
-
 
 /*FAQ*/
 .FAQ .title {
@@ -543,6 +536,10 @@ section {
     justify-content: space-between;
     cursor: pointer;
     transition: all 0.3s;
+}
+
+.ask i {
+    font-size: 24px;
 }
 
 .ask:hover {

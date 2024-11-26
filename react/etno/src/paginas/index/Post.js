@@ -39,7 +39,7 @@ export function Post() {
                     {PostTexto()}
                 </div>
             </article>
-            {Button('posts', 'Mais Postagens', 'posts.html')}
+            {Button('posts', 'Mais Postagens', './posts')}
         </section>
     )
 }

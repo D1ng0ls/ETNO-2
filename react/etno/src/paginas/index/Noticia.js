@@ -36,7 +36,7 @@ export function Noticia() {
                         </div>
                     </div>
                 </div>
-                    {Button('noticias','Mais Notícias', 'noticias.html')}
+                    {Button('noticias','Mais Notícias', './noticias')}
             </article>
         </section>
     )

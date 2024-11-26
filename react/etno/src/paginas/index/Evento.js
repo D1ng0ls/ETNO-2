@@ -39,7 +39,7 @@ export function Evento() {
                         </div>
                     </div>
                 </div>
-                {Button('eventos','Mais Eventos', 'eventos.html')}
+                {Button('eventos','Mais Eventos', './eventos')}
             </article>
         </section>
     )

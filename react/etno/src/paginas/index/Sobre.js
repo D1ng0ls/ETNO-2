@@ -13,7 +13,7 @@ export function Sobre() {
                     <p>Nosso principal objetivo é elevar a consciência sobre questões raciais e promover a inclusão por meio da educação, conscientização e engajamento da comunidade.</p>
                 </div>
             </article>
-            {Button('sobre', 'Conheça nossa história', 'sobre.html')}
+            {Button('sobre', 'Conheça nossa história', './sobre')}
         </section>
     )
 }

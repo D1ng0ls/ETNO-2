@@ -30,10 +30,9 @@ footer {
     color: var(--color-brown);
 }
 
-.text-social svg {
+.text-social i {
     color: #FFFAFA ;
-    height: 24px;
-    width: 24px;
+    font-size: 24px;
 }
 
 .icon {

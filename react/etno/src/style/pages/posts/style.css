@@ -46,14 +46,14 @@ div.social-media-buttons {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    padding: 7px;
+    padding: 12px 7px;
     width: 150px;
     border-radius: 12px;
     font-weight: 450;
 }
 
-.btn-social-media svg {
-    width: 22px;
+.btn-social-media i {
+    font-size: 22px;
 }
 
 .facebook-button {
@@ -87,13 +87,16 @@ section.last-posts-content span {
     font-size: 20px;
 }
 
-section.last-posts-content svg {
-    width: 18px;
+section.last-posts-content i {
+    font-size: 18px;
 }
-
 
 section.last-posts-content img {
     width: 28px;
+}
+
+#facebook-posts i {
+    font-size: 2rem;
 }
 
 section.social-media-posts {
