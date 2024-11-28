@@ -64,11 +64,10 @@ h1, h2, h3, p {
     cursor: pointer;
 }
 
-.title-quest svg {
+.title-quest i {
     color: var(--color-brown);
     margin-right: 35px;
-    width: var(--font-size-h2);
-    height: var(--font-size-h2);
+    font-size: var(--font-size-h2);
     transition: all 0.2s ease;
 }
 
@@ -82,7 +81,7 @@ h1, h2, h3, p {
     font-weight: 900;
 }
 
-.gira svg {
+.gira i {
     transform: rotateZ(90deg);
 }
 

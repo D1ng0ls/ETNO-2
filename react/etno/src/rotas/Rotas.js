@@ -6,6 +6,8 @@ import Index from './../paginas/index/IndexTemplate';
 import Noticia from './../paginas/noticia/NoticiaTemplate';
 import Evento from './../paginas/evento/EventoTemplate';
 import Post from './../paginas/post/PostTemplate';
+import Sobre from './../paginas/sobre/SobreTemplate';
+import FAQ from './../paginas/faq/FAQTemplate';
 
 const Rotas = () => {
   const location = useLocation();
@@ -34,6 +36,8 @@ const Rotas = () => {
           <Route path="/noticias" element={<Noticia />} />
           <Route path="/eventos" element={<Evento />} />
           <Route path="/posts" element={<Post />} />
+          <Route path="/sobre" element={<Sobre />} />
+          <Route path="/faq" element={<FAQ />} />
         </Route>
       </Routes>
     </>
