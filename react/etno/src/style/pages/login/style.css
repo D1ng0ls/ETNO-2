@@ -1,0 +1,95 @@
+@import url(../../global/default.css);
+
+header, footer {
+    display: none;
+}
+
+body {
+    overflow: hidden;
+    background-color: #1f1f1f;
+    background-image: url(./../../../media/pages/index/banner_3.png);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-login, h2 {
+    color: var(--color-white);
+}
+
+.login-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    border: 2px solid var(--color-white);
+    border-radius: 10px;
+    gap: 30px;
+    background-color: rgba(255, 250, 250, 0.20);
+    backdrop-filter: blur(5px);
+    margin-bottom: 30px;
+}
+
+.login-form h2 {
+    letter-spacing: 2px;
+}
+
+.login-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-size: 0.75rem;
+    width: 300px;
+}
+
+.login-form form input {
+    background: none;
+    border: none;
+    border-bottom: 2px solid var(--color-white);
+    padding: 5px;
+    font-size: 1rem;
+    color: var(--color-white);
+}
+
+.login-form form input::placeholder {
+    color: currentColor;
+}
+
+.remind-forget, label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remind-forget input {
+    border-radius: 10px;
+    border: none;
+    margin: 0;
+    margin-right: 10px;
+    vertical-align: baseline;
+    width: 1rem;
+    height: 1rem;
+}
+
+.login-form form button {
+    background-color: var(--color-white);
+    border: transparent;
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--color-brown);
+    font-weight: 500;
+    font-family: var(--font-poppins);
+    cursor: pointer;
+}
+
+.login-form form button:hover {
+    transition: all 0.2s;
+    filter: brightness(0.8);
+}
+
+.container-login p a {
+    color: var(--color-yellow);
+}

@@ -8,6 +8,9 @@ import Evento from './../paginas/evento/EventoTemplate';
 import Post from './../paginas/post/PostTemplate';
 import Sobre from './../paginas/sobre/SobreTemplate';
 import FAQ from './../paginas/faq/FAQTemplate';
+import Login from './../paginas/login/LoginTemplate';
+import Register from './../paginas/register/RegisterTemplate';
+import PassChange from '../paginas/passchange/PassChangeTemplate';
 
 const Rotas = () => {
   const location = useLocation();
@@ -25,6 +28,8 @@ const Rotas = () => {
       require('./../style/pages/sobre/style.css');
     } else if (location.pathname === '/faq') {
       require('./../style/pages/faq/style.css');
+    }else if (location.pathname === '/login' || location.pathname === '/register' || location.pathname === '/changepassword') {
+      require('./../style/pages/login/style.css');
     }
   }, [location.pathname]);
 
@@ -38,6 +43,9 @@ const Rotas = () => {
           <Route path="/posts" element={<Post />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/changepassword" element={<PassChange />} />
         </Route>
       </Routes>
     </>
