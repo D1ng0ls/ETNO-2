@@ -11,6 +11,7 @@ import FAQ from './../paginas/faq/FAQTemplate';
 import Login from './../paginas/login/LoginTemplate';
 import Register from './../paginas/register/RegisterTemplate';
 import PassChange from '../paginas/passchange/PassChangeTemplate';
+import User from '../paginas/user/UserTemplate';
 
 const Rotas = () => {
   const location = useLocation();
@@ -18,18 +19,24 @@ const Rotas = () => {
   React.useEffect(() => {
     if (location.pathname === '/') {
       require('./../style/pages/index/style.css');
+      require('./../style/pages/index/mobile.css');
     } else if (location.pathname === '/noticias') {
       require('./../style/pages/noticias/style.css');
+      require('./../style/pages/noticias/mobile.css');
     } else if (location.pathname === '/eventos') {
       require('./../style/pages/eventos/style.css');
     } else if (location.pathname === '/posts') {
       require('./../style/pages/posts/style.css');
     } else if (location.pathname === '/sobre') {
       require('./../style/pages/sobre/style.css');
+      require('./../style/pages/sobre/mobile.css');
     } else if (location.pathname === '/faq') {
       require('./../style/pages/faq/style.css');
-    }else if (location.pathname === '/login' || location.pathname === '/register' || location.pathname === '/changepassword') {
+      require('./../style/pages/faq/mobile.css');
+    } else if (location.pathname === '/login' || location.pathname === '/register' || location.pathname === '/changepassword') {
       require('./../style/pages/login/style.css');
+    } else if (location.pathname === '/user') {
+      require('./../style/pages/user/style.css');
     }
   }, [location.pathname]);
 
@@ -46,6 +53,7 @@ const Rotas = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/changepassword" element={<PassChange />} />
+          <Route path="/user" element={<User />} />
         </Route>
       </Routes>
     </>

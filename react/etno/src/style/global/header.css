@@ -44,10 +44,15 @@ nav {
 nav ul {
     display: flex;
     flex-direction: row;
+    align-items: center;
     margin-right: 50px;
     font-weight: 500;
 }
 
 nav ul>li {
     margin: 0 30px;
+}
+
+header i {
+    font-size: 2rem;
 }

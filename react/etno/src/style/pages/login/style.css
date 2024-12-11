@@ -34,6 +34,7 @@ body {
 
 .login-form h2 {
     letter-spacing: 2px;
+    text-align: center;
 }
 
 .login-form form {
@@ -92,4 +93,18 @@ body {
 
 .container-login p a {
     color: var(--color-yellow);
+}
+
+@media only screen and (max-width: 400px) {
+    .login-form form {
+        width: 90% !important;
+    }
+    .container-login p {
+        text-align: center;
+    }
+    .remind-forget {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
 }
