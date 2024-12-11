@@ -155,7 +155,7 @@ hr {
     display: flex;
     flex-direction: column;
     margin-bottom: 0;
-    transition: all 0.6s;
+    transition: all 0.3s;
 }
 
 .fecha-card {
@@ -170,9 +170,8 @@ hr {
     margin-top: 50px;
 }
 
-.aparece svg {
-    width: 32px;
-    height: 32px;
+.aparece i {
+    font-size: 2rem;
 }
 
 .hidden {

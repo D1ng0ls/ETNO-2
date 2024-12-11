@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Evento1 from './../../media/pages/index/home-eventos-img.png'
+import Evento2 from './../../media/pages/index/evento.jpg'
 import {Titulo} from "./../../library/Titulo"
 import {Button} from "./../../library/Button"
 
@@ -18,6 +19,12 @@ export function EventoTexto() {
 }
 
 export function Evento() {
+    const [eventOpen, setEventOpen] = useState(true);
+
+    const toggleEvent = () => {
+        setEventOpen(!eventOpen);
+    };
+
     return(
         <section className="sect eventos">
             {Titulo('eventos', "Eventos")}
@@ -25,16 +32,16 @@ export function Evento() {
                 <div className="eventos-container">
                     <div className="evento-recente">
                         <img 
-                            src={Evento1}
+                            src={`${eventOpen? Evento1 : Evento2}`}
                             id="img-event"
                             alt="Evento imagem"
                         />
                     </div>
                     <div className="eventos-diversos">
-                        <div className="evento eve1 selecionado">
+                        <div className={`evento eve1 ${eventOpen? 'selecionado' : ''}`} onClick={toggleEvent}>
                             {EventoTexto()}
                         </div>
-                        <div className="evento eve2">
+                        <div className={`evento eve2 ${!eventOpen? 'selecionado' : ''}`} onClick={toggleEvent}>
                             {EventoTexto()}
                         </div>
                     </div>
